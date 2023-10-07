@@ -8,7 +8,7 @@
     "hash": "0ecdc4e025a396730672e735585b484e02b0ecb85117aa41cd97ac24e2b8e627",
     "bin": [
         {
-            "executable": "Beaver-notes.exe",
+            "name": "Beaver-notes.exe",
             "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/win-unpacked.zip",
             "hash": "0ecdc4e025a396730672e735585b484e02b0ecb85117aa41cd97ac24e2b8e627"
         }
