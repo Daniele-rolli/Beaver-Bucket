@@ -2,9 +2,9 @@
     "version":  "1.0.0",
     "license":  "MIT",
     "extract_dir":  "",
-    "url":  "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.exe",
+    "url":  "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/win-unpacked.zip",
     "depends":  "",
     "homepage":  "https://beavernotes.com",
-    "hash":  "a470ccfdd744fb77503d8a4fd0746864c62b9905cb8987d3d22c459e709f3ebb",
-    "bin":  ""
+    "hash":  "0ecdc4e025a396730672e735585b484e02b0ecb85117aa41cd97ac24e2b8e627",
+    "bin":  "Beaver-notes.exe"
 }
