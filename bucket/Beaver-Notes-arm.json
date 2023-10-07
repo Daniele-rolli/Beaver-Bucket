@@ -7,7 +7,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe",
-      "hash": "6f581abfb38a37737ca535a8973ed2eed1a8ac4a474737a2581b1d5f51763968",
+      "hash": "a470ccfdd744fb77503d8a4fd0746864c62b9905cb8987d3d22c459e709f3ebb",
       "installer": {
         "script": [
           "& \"$dir\\Beaver-notes.Setup.1.0.0.exe\" /S"
