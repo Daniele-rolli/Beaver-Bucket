@@ -44,7 +44,6 @@
 }
     }
   },
-  "pre_download": "Assert-Administrator",
   "pre_install": [
     "$processname = \"Beaver-Notes\"",
     "$process = Get-Process $processname -ErrorAction SilentlyContinue",
