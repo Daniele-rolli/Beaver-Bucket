@@ -16,7 +16,7 @@
     },
     "arm64": {
       "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe",
-      "hash": "hash_value_for_arm64_installer",
+      "hash": "6f581abfb38a37737ca535a8973ed2eed1a8ac4a474737a2581b1d5f51763968",
       "installer": {
         "script": [
           "& \"$dir\\Beaver-notes.Setup.1.0.0.arm64.exe\" /S"
