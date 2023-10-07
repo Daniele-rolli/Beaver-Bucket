@@ -1,20 +1,16 @@
 {
     "version": "1.0.0",
     "license": "MIT",
+    "extract_dir": "",
     "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/win-unpacked.zip",
+    "depends": [],
+    "homepage": "https://beavernotes.com",
     "hash": "0ecdc4e025a396730672e735585b484e02b0ecb85117aa41cd97ac24e2b8e627",
-    "architecture": "x64",  // Specify the target architecture if applicable
     "bin": [
         {
-            "name": "beaver-notes.exe",
+            "executable": "Beaver-notes.exe",
             "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/win-unpacked.zip",
             "hash": "0ecdc4e025a396730672e735585b484e02b0ecb85117aa41cd97ac24e2b8e627"
         }
-    ],
-    "homepage": "https://beavernotes.com",
-    "description": "Beaver is an amazing note-taking app!",
-    "autoupdate": {
-        "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/latest",
-        "regex": "Beaver-(.*?)-win-unpacked.zip"
-    }
+    ]
 }
