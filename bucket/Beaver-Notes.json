@@ -13,15 +13,6 @@
           "& \"$dir\\Beaver-notes.Setup.1.0.0.exe\" /S"
         ]
       }
-    },
-    "arm64": {
-      "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe",
-      "hash": "6f581abfb38a37737ca535a8973ed2eed1a8ac4a474737a2581b1d5f51763968",
-      "installer": {
-        "script": [
-          "& \"$dir\\Beaver-notes.Setup.1.0.0.arm64.exe\" /S"
-        ]
-      }
     }
   },
   "pre_download": "Assert-Administrator",
@@ -42,6 +33,18 @@
     "$CommonDesktopPath = [Environment]::GetFolderPath(\"CommonDesktopDirectory\")",
     "if (Test-Path \"$CommonDesktopPath\\$programname.lnk\") {Remove-Item \"$CommonDesktopPath\\$programname.lnk\" -Force}"
   ],
+  "uninstaller": {
+    "script": [
+      "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFiles\")",
+      "$filepath = \"$ProgramFiles\\Beaver-Notes\\Beaver-Notes.exe\"",
+      "if ((Test-Path -Path $filepath -PathType Leaf))",
+      "{",
+      "   Remove-Item \"$ProgramFiles\\Beaver-Notes\" -Recurse -Force",
+      "   Remove-Item \"$CommonDesktopPath\\Beaver-Notes.lnk\" -Force",
+      "   Remove-Item \"$UserProfile\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Beaver-Notes.lnk\" -Force"
+      "}"
+    ]
+  },
   "checkver": {
     "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases",
     "regex": "Beaver-Notes ([\\d.]+)"
@@ -50,9 +53,6 @@
     "architecture": {
       "64bit": {
         "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/$version/Beaver-notes.Setup.$version.exe"
-      },
-      "arm64": {
-        "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/$version/Beaver-notes.Setup.$version.arm64.exe"
       }
     }
   }
