@@ -33,15 +33,16 @@
     "$CommonDesktopPath = [Environment]::GetFolderPath(\"CommonDesktopDirectory\")",
     "if (Test-Path \"$CommonDesktopPath\\$programname.lnk\") {Remove-Item \"$CommonDesktopPath\\$programname.lnk\" -Force}"
   ],
-  "uninstaller": {
-    "script": [
-      "if (Test-Path \"$env:LocalAppData\\Programs\\Beaver-notes\\Uninstall Beaver-notes.exe\") {",
-      "   Start-Process -Wait \"$env:LocalAppData\\Programs\\Beaver-notes\\Uninstall Beaver-notes.exe\"",
-      "} else {",
-      "   Write-Host 'Uninstaller not found.'",
-      "}"
-    ]
-  },
+"uninstaller": {
+  "script": [
+    "$uninstallCommand = Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*' | Where-Object { $_.DisplayName -eq 'Beaver Notes' } | Select-Object -ExpandProperty UninstallString",
+    "if ($uninstallCommand) {",
+    "   Invoke-Expression $uninstallCommand",
+    "} else {",
+    "   Write-Host 'Uninstaller not found.'",
+    "}"
+  ]
+},
   "checkver": {
     "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases",
     "regex": "Beaver-Notes ([\\d.]+)"
