@@ -3,7 +3,6 @@
   "description": "Beaver Notes - A note-taking application",
   "homepage": "https://www.Beavernotes.com",
   "license": "MIT",
-  "changelog": "https://github.com/Daniele-rolli/Beaver-Notes/releases",
   "architecture": {
     "64bit": {
       "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe",
