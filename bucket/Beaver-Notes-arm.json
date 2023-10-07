@@ -31,17 +31,16 @@
           "& \"$dir\\Beaver-notes.Setup.1.0.0.arm64.exe\" /S"
         ]
       },
-      "uninstaller": {
-        "script": [
-          "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFiles\")",
-          "$filepath = \"$ProgramFiles\\Beaver-Notes\\Beaver-Notes.exe\"",
-          "if (Test-Path -Path $filepath -PathType Leaf) {",
-          "   Remove-Item \"$ProgramFiles\\Beaver-Notes\" -Recurse -Force",
-          "   Remove-Item \"$CommonDesktopPath\\Beaver-Notes.lnk\" -Force",
-          "   Remove-Item \"$UserProfile\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Beaver-Notes.lnk\" -Force",
-          "}"
-        ]
-      }
+    "uninstaller": {
+      "script": [
+        "$uninstallCommand = Get-ItemProperty 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\*' | Where-Object { $_.DisplayName -eq 'Beaver Notes' } | Select-Object -ExpandProperty UninstallString",
+        "if ($uninstallCommand) {",
+        "   Invoke-Expression $uninstallCommand",
+        "} else {",
+        "   Write-Host 'Uninstaller not found.'",
+        "}"
+      ]
+}
     }
   },
   "pre_download": "Assert-Administrator",
@@ -68,9 +67,6 @@
   },
   "autoupdate": {
     "architecture": {
-      "64bit": {
-        "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/$version/Beaver-notes.Setup.$version.exe"
-      },
       "arm64": {
         "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/$version/Beaver-notes.Setup.$version.arm64.exe"
       }
