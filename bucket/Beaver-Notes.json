@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "homepage": "https://Beavernotes.com",
   "license": "MIT",
+  "hash" : "a470ccfdd744fb77503d8a4fd0746864c62b9905cb8987d3d22c459e709f3ebb"
   "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.exe",
   "bin": [
     "Beaver-notes.Setup.1.0.0.exe"
