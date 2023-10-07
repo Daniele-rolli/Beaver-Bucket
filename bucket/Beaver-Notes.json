@@ -1,20 +1,27 @@
 {
   "version": "1.0.0",
+  "description": "Note-taking application - Beaver Notes",
   "homepage": "https://Beavernotes.com",
   "license": "MIT",
-  "hash" : "a470ccfdd744fb77503d8a4fd0746864c62b9905cb8987d3d22c459e709f3ebb",
-  "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.exe",
-  "bin": [
-    "Beaver-notes.Setup.1.0.0.exe"
+  "identifier": "MIT",
+  "url": [
+    "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.exe",
+    "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe"
   ],
-  "architectures": {
+  "architecture": {
     "64bit": {
+      "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.exe"
+    },
+    "arm64": {
       "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe"
     }
   },
-  "preinstall": [
-    {
-      "ps1": "$packageDir\\Beaver-notes.Setup.1.0.0.exe /S" 
-    }
-  ]
+  "bin": "Beaver-notes.Setup.1.0.0.exe",
+  "installer": {
+    "file": "Beaver-notes.Setup.1.0.0.exe",
+    "script": [
+      "$dir\\Beaver-notes.Setup.1.0.0.exe /S"
+    ],
+    "keep": "false"
+  }
 }
