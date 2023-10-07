@@ -10,5 +10,10 @@
     "64bit": {
       "url": "https://github.com/Daniele-rolli/Beaver-Notes/releases/download/1.0.0/Beaver-notes.Setup.1.0.0.arm64.exe"
     }
-  }
+  },
+  "preinstall": [
+    {
+      "ps1": "$packageDir\\Beaver-notes.Setup.1.0.0.exe /S" 
+    }
+  ]
 }
