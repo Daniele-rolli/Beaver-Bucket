@@ -15,12 +15,10 @@
       },
       "uninstaller": {
         "script": [
-          "$ProgramFiles = [Environment]::GetFolderPath(\"ProgramFiles\")",
-          "$filepath = \"$ProgramFiles\\Beaver-Notes\\Beaver-Notes.exe\"",
-          "if (Test-Path -Path $filepath -PathType Leaf) {",
-          "   Remove-Item \"$ProgramFiles\\Beaver-Notes\" -Recurse -Force",
-          "   Remove-Item \"$CommonDesktopPath\\Beaver-Notes.lnk\" -Force",
-          "   Remove-Item \"$UserProfile\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Beaver-Notes.lnk\" -Force",
+          "if (Test-Path \"$env:LocalAppData\\Programs\\Beaver-notes\\Uninstall Beaver-notes.exe\") {",
+          "   Start-Process -Wait \"$env:LocalAppData\\Programs\\Beaver-notes\\Uninstall Beaver-notes.exe\"",
+          "} else {",
+          "   Write-Host 'Uninstaller not found.'",
           "}"
         ]
       }
