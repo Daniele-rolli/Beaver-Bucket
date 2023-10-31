@@ -1,0 +1,25 @@
+name: Test Scoop Bucket
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+
+      - name: Install Scoop
+        run: |
+          iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+          scoop update
+
+      - name: Add Scoop Bucket
+        run: scoop bucket add Beaver-Bucket https://github.com/Daniele-rolli/Beaver-Bucket
+
+      - name: Install Beaver Notes
+        run: scoop install Beaver-Notes
+
+      - name: Check Installation
+        run: Get-Command Beaver-Notes
