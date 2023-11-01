@@ -1,4 +1,4 @@
-#Beaver-Bucket
+# Beaver-Bucket
 
 Welcome to the official Scoop Bucket for Beaver Notes. This bucket serves as a delicious milestone in making Beaver Notes more accessible to everyone, thanks to Scoop. Now, Windows users can install and update Beaver Notes without breaking a sweat.
 
