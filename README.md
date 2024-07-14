@@ -1,6 +1,6 @@
 # Beaver-Bucket
 
-[![Health Check](https://github.com/Daniele-rolli/Beaver-Bucket/actions/workflows/health.yml/badge.svg)](https://github.com/Daniele-rolli/Beaver-Bucket/actions/workflows/health.yml)
+[![Tests](https://github.com/Daniele-rolli/Beaver-Bucket/actions/workflows/ci.yml/badge.svg)](https://github.com/Daniele-rolli/Beaver-Bucket/actions/workflows/ci.yml)
 
 Welcome to the official Scoop Bucket for Beaver Notes. This bucket serves as a delicious milestone in making Beaver Notes more accessible to everyone, thanks to Scoop. Now, Windows users can install and update Beaver Notes without breaking a sweat.
 
