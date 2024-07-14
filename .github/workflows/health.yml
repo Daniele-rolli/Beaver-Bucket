@@ -1,0 +1,27 @@
+name: Health Check
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch as needed
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Scoop
+        run: |
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          scoop install git
+
+      - name: Add Scoop Bucket
+        run: scoop bucket add Beaver-Bucket https://github.com/Daniele-rolli/Beaver-Bucket
+
+      - name: Install Scoop Package
+        run: scoop install Beaver-Notes
+
+      # Add more steps here for testing the package if needed
