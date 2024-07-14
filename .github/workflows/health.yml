@@ -15,15 +15,19 @@ jobs:
 
       - name: Install Scoop
         run: |
+          # Install Scoop and Git
           Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
           scoop install git
-          $env:SCOOP='D:\scoop'  # Specify the directory where Scoop will be installed
-          scoop install scoop -g  # Install scoop itself
+
+          # Add Scoop to the PATH
+          $scoopDir = 'D:\scoop'  # Specify the directory where Scoop will be installed
+          $env:SCOOP = $scoopDir
+          $env:PATH += ";${scoopDir}\apps\scoop\current\bin"
 
       - name: Add Scoop Bucket
-        run: scoop bucket add Beaver-Bucket https://github.com/Daniele-rolli/Beaver-Bucket
+        run: |
+          scoop bucket add Beaver-Bucket https://github.com/Daniele-rolli/Beaver-Bucket
 
       - name: Install Scoop Package
-        run: scoop install Beaver-Notes
-
-      # Add more steps here for testing the package if needed
+        run: |
+          scoop install Beaver-Notes
