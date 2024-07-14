@@ -17,6 +17,8 @@ jobs:
         run: |
           Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
           scoop install git
+          $env:SCOOP='D:\scoop'  # Specify the directory where Scoop will be installed
+          scoop install scoop -g  # Install scoop itself
 
       - name: Add Scoop Bucket
         run: scoop bucket add Beaver-Bucket https://github.com/Daniele-rolli/Beaver-Bucket
