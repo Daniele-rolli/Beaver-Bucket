@@ -1,15 +1,15 @@
 {
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Beaver Notes - A note-taking application",
   "homepage": "https://www.Beavernotes.com",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Beaver-Notes/Beaver-Notes/releases/download/3.4.0/Beaver-notes.Setup.3.4.0.exe",
-      "hash": "9d7fdffb052dc0aa699124adf607a13b0de5a0fc33bab2099cccc837af1a3963",
+      "url": "https://github.com/Beaver-Notes/Beaver-Notes/releases/download/3.5.0/Beaver-notes.Setup.3.5.0.exe",
+      "hash": "f035020d58a31e6a3c6d9b0d28653a8b181845f85b6b350bfbf97c58e307712f",
       "installer": {
         "script": [
-          "& \"$dir\\Beaver-notes.Setup.3.4.0.exe\" /S"
+          "& \"$dir\\Beaver-notes.Setup.3.5.0.exe\" /S"
         ]
       }
     }
